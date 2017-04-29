@@ -31,7 +31,7 @@
         <a href="locationrep.cfm">Report a new celestial location</a>
       </li>
       <li class="menuButton">
-        <a href="forums.html">Forums</a>
+        <a href="shoprep.cfm">Report a new Shop location</a>
       </li>
       <li class="menuButton">
         <a href="updates.html">Game Updates</a>
