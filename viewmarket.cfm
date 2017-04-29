@@ -107,7 +107,7 @@
  	<cfquery name="get_location" datasource="#session.maindsn#">
 				SELECT *
 				FROM locations
-        WHERE galpower is pow
+        WHERE galpower ='#pow#'
 				ORDER BY location
 				asc
 	</cfquery>
@@ -126,13 +126,13 @@
   <cfquery name="get_shop" datasource="#session.maindsn#"> <!--- getting the list of shops based on the location above--->
 				SELECT *
 				FROM shops
-        WHERE location is loc
+        WHERE location ='#loc#'
 				ORDER BY shopname
 				asc
 	</cfquery>
 
 <tr align="center">
-<td class="headerblack">Pick a shop</td>
+<td class="headerblack">Pick a shop</td> <!--- picking the shop you want information from --->
 <td class="headerblack">
 <select name="shop" required>
 	<cfloop query="get_shop">
@@ -143,7 +143,7 @@
 </tr>
 
 <tr align="center">
-<td class="headerblack">commodity</td>
+<td class="headerblack">commodity</td> <!--- picking the commodity you want data on --->
 <td class="headerblack">
 <select name="com" required>
 	<cfloop query="get_com">
@@ -153,42 +153,33 @@
 	</td>
 </tr>
 
-  <cfquery name="get_buy" datasource="#session.maindsn#"> <!--- getting the list of buy prices based on the location above--->
+  <cfquery name="get_buy" datasource="#session.maindsn#"> <!--- getting the list of buy prices based on the location and commodity above--->
 				SELECT *
 				FROM buyrep
         WHERE shop ='#shop#' AND  com ='#com#'
-				ORDER BY 
+				ORDER BY time
 				asc
 	</cfquery>
   
-  <cfquery name="get_sell" datasource="#session.maindsn#"> <!--- getting the list of sell prices based on the location above--->
+  <cfquery name="get_sell" datasource="#session.maindsn#"> <!--- getting the list of sell prices based on the location and commodity above--->
 				SELECT *
 				FROM sellrep
         WHERE shop ='#shop#' AND  com ='#com#'
-				ORDER BY 
+				ORDER BY time
 				asc
 	</cfquery>
 
 <tr align="center">
-<td class="headerblack"></td>
-<td class="headerblack">
-<select name="com" required>
-	<cfloop query="get_com">
-	<option value="#get_com.comUID#">#get_com.comname#</option>
-	</cfloop>
-	</select>
-	</td>
+<td class="headerblack">Latest BUY price</td>
+<td class="headerblack"></td>  <!--- this should be the latest price --->
 </tr>
 
 <tr align="center">
-<td class="headerblack"></td>
-<td class="headerblack"></td>
+ <td class="headerblack">Latest Sell price</td>
+ <td class="headerblack"></td> <!--- this should be the latest price --->
 </tr>
 
-<tr align="center">
- <td class="headerblack"></td>
- <td class="headerblack"></td>
-</tr>
+<!--- Graph of historical price data not sure how to mock up a display for this --->
 
 
 
