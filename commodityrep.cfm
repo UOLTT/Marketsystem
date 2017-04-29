@@ -116,7 +116,9 @@
 
 </cfoutput>
 
-
+<cfset commass = '#SafeEncode( '#commass#' )#'> <!--- this is my sanitization call. I know this function may not be in our build but place holder --->
+<cfset comname = '#SafeEncode( '#comname#' )#'> <!--- place holder sanitzation --->
+<cfset comdesc = '#SafeEncode( '#comdesc#' )#'> <!--- place holder sanitzation --->
 
     </section>
 
