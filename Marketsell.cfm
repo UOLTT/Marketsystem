@@ -34,7 +34,7 @@
         <a href="shoprep.cfm">Report a new Shop location</a>
       </li>
       <li class="menuButton">
-        <a href="updates.html">Game Updates</a>
+        <a href="commodityrep.cfm">Report a new commodity</a>
       </li>
       <li class="menuButton">
         <a href="faq.html">FAQ</a>
