@@ -154,6 +154,8 @@
  </table></form>
 </div>
 
+<cfset locname = '#SafeEncode( '#locname#' )#'> <!--- place holder sanitization --->
+
 </cfoutput>
 
 
