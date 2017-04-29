@@ -25,7 +25,7 @@
         <a href="marketsell.cfm">Report a market selling price</a>
       </li>
       <li class="menuButton">
-        <a href="ingame.html">In Game</a>
+        <a href="marketbuy.cfm">Report a market buy price</a>
       </li>
       <li class="menuButton">
         <a href="community.html">Community</a>
