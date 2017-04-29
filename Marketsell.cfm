@@ -28,7 +28,7 @@
         <a href="marketbuy.cfm">Report a market buy price</a>
       </li>
       <li class="menuButton">
-        <a href="community.html">Community</a>
+        <a href="locationrep.cfm">Report a new celestial location</a>
       </li>
       <li class="menuButton">
         <a href="forums.html">Forums</a>
