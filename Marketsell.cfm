@@ -1,4 +1,4 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -40,7 +40,7 @@ e<!DOCTYPE html>
         <a href="faq.html">FAQ</a>
       </li>
       <li class="menuButton">
-        <a href="#allposts">All Posts</a>
+        <a href="allposts">All Posts</a>
       </li>
 
     </ul>
