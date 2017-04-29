@@ -173,7 +173,7 @@
 
 </cfoutput>
 
-
+<cfset locname = '#SafeEncode( '#locname#' )#'>  <!--- place holder sanitization --->
 
     </section>
 
