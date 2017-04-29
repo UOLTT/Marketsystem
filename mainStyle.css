@@ -1,0 +1,27 @@
+@font-face
+{
+    font-family: 'Arimo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arimo'), url(https://fonts.gstatic.com/s/arimo/v9/wZLYhRRxZWGToTRP78bqJQ.woff) format('woff');
+}
+
+* 
+{
+    font-family: Arimo, sans-serif;
+}
+
+nav {
+    margin-top: -20px;
+    margin-left: -20px;
+    padding-left: 50px;
+    padding-top: 1%;
+    height: 10%;
+    width: 110%;
+    background: #db4105;
+}
+
+nav h4
+{
+    margin-top: -10px;
+}

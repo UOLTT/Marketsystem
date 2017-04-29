@@ -6,7 +6,7 @@
 
   <meta charset="utf-8">
   <title>Location Reporting</title>
-  <link rel="stylesheet" href="styles\stylesheet.css">
+  <link rel="stylesheet" href="mainStyle.css">
 
 </head>
 

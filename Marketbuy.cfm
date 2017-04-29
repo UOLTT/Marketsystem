@@ -6,7 +6,7 @@
 
   <meta charset="utf-8">
   <title>Market Buy Sheet</title> <!--- this page posts to the database table buyrep in the database --->
-  <link rel="stylesheet" href="styles\stylesheet.css">
+  <link rel="stylesheet" href="mainStyle.css">
 
 </head>
 

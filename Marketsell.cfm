@@ -6,7 +6,7 @@
 
   <meta charset="utf-8">
   <title>Market Sell Sheet</title> <!--- this page posts to the database table sellrep in the database --->
-  <link rel="stylesheet" href="styles\stylesheet.css">
+  <link rel="stylesheet" href="mainStyle.css">
 
 </head>
 

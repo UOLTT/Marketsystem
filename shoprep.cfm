@@ -6,7 +6,7 @@
 
   <meta charset="utf-8">
   <title>Shop Reporting</title>
-  <link rel="stylesheet" href="styles\stylesheet.css">
+  <link rel="stylesheet" href="mainStyle.css">
 
 </head>
 
@@ -15,7 +15,6 @@
   <header>
 
     <h1>UOLTT Conglomerate</h1>
-
     <ul class="menuList">
 
       <li class="menuButton">
