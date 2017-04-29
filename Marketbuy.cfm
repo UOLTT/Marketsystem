@@ -5,7 +5,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Market Sell Sheet</title> <!--- this page posts to the database table sellrep in the database --->
+  <title>Market Buy Sheet</title> <!--- this page posts to the database table buyrep in the database --->
   <link rel="stylesheet" href="styles\stylesheet.css">
 
 </head>
@@ -53,7 +53,7 @@
 
       <div class="articleHeader">
 
-        <h2 class="articleTitle">Reporting Item sold to the market</h2>
+        <h2 class="articleTitle">Reporting Item bought from the market</h2>
 
       </div>
     </section>
@@ -90,10 +90,10 @@
 <form action="process_marketreport.cfm" method="post"> <!--- using a form because I don't know better --->
 <table frame="box" cellspacing="2" cellpadding="2" bgcolor="ffffff">
 <tr align="center">
-   <td colspan="4" align="center"><font color="FF0000"><font size="+2">Market Date Report Form</font></font></td>
+   <td colspan="4" align="center"><font color="FF0000"><font size="+2">Market Data Report Form</font></font></td>
  </tr>
 <tr align="center">
-<td class="headerblack">Reported by</td> <!--- this is where someone would pick who reported this sell information --->
+<td class="headerblack">Reported by</td> <!--- this is where someone would pick who reported this buy information --->
 <td class="headerblack">
     <select name="scmon" required>
 	<cfloop query="get_mem_names">
@@ -139,7 +139,7 @@
 
 </cfoutput>
 
-<cfset price = '#SafeEncode( '#price#' )#'> <!--- place holder sanitization --->
+<cfset price = '#SafeEncode( '#price#' )#'> <!--- this is a place holder sanitization --->
 
     </section>
 

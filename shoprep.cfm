@@ -5,7 +5,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Market Sell Sheet</title> <!--- this page posts to the database table sellrep in the database --->
+  <title>Shop Reporting</title>
   <link rel="stylesheet" href="styles\stylesheet.css">
 
 </head>
@@ -53,7 +53,7 @@
 
       <div class="articleHeader">
 
-        <h2 class="articleTitle">Reporting Item sold to the market</h2>
+        <h2 class="articleTitle">Reporting a new location</h2>
 
       </div>
     </section>
@@ -67,33 +67,39 @@
       </div>
 
 <cfoutput>
-	<cfquery name="get_mem_names" datasource="#session.maindsn#"> <!--- getting the user name, if they are logged in this can be replaced --->
+	<cfquery name="get_mem_names" datasource="#session.maindsn#">
 				SELECT *
 				FROM lttname
 				ORDER BY sc1
 				asc
 	</cfquery>
-	<cfquery name="get_com" datasource="#session.maindsn#"> <!--- Getting the commoditys list --->
+	<cfquery name="get_location" datasource="#session.maindsn#">
 				SELECT *
-				FROM commodity
-				ORDER BY comname
+				FROM locations
+				ORDER BY location
 				asc
 	</cfquery>
-	<cfquery name="get_shop" datasource="#session.maindsn#"> <!--- getting the list of shops --->
+	<cfquery name="get_gal" datasource="#session.maindsn#">
 				SELECT *
-				FROM shops
-				ORDER BY shopname
+				FROM galpowers
+				ORDER BY powername
+				asc
+	</cfquery>
+  <cfquery name="get_local" datasource="#session.maindsn#">
+				SELECT *
+				FROM localaff
+				ORDER BY affname
 				asc
 	</cfquery>
 	
 <div>
-<form action="process_marketreport.cfm" method="post"> <!--- using a form because I don't know better --->
+<form action="process_marketreport.cfm" method="post"> <!--- yup still forms --->
 <table frame="box" cellspacing="2" cellpadding="2" bgcolor="ffffff">
 <tr align="center">
-   <td colspan="4" align="center"><font color="FF0000"><font size="+2">Market Date Report Form</font></font></td>
+   <td colspan="4" align="center"><font color="FF0000"><font size="+2">Shop Reporting Form</font></font></td>
  </tr>
 <tr align="center">
-<td class="headerblack">Reported by</td> <!--- this is where someone would pick who reported this sell information --->
+<td class="headerblack">Reported by</td>
 <td class="headerblack">
     <select name="scmon" required>
 	<cfloop query="get_mem_names">
@@ -102,44 +108,57 @@
 	</select>
 	</td>
 </tr>
+
 <tr align="center">
-<td class="headerblack">Shop</td> <!--- selecting the shop from a drop down list of shops in the system --->
+<td class="headerblack">Location</td>
 <td class="headerblack">
-<select name="shop" required>
-	<cfloop query="get_shop">
-	<option value="#get_shop.shopUID#">#get_shop.shopname#</option>
+<select name="location" required>
+	<cfloop query="get_location">
+	<option value="#get_location.locationUID#">#get_location.location#</option>
 	</cfloop>
 	</select>
 	</td>
 </tr>
 
 <tr align="center">
-<td class="headerblack">Commodity</td> <!--- Selecting the commodity from the drop down list --->
+<td class="headerblack">Galactic Power</td>
 <td class="headerblack">
-<select name="com" required>
-	<cfloop query="get_com">
-	<option value="#get_com.comUID#">#get_com.comname#</option>
+<select name="galpow" required>
+	<cfloop query="get_gal">
+	<option value="#get_gal.galpowersUID#">#get_gal.powername#</option>
 	</cfloop>
 	</select>
 	</td>
 </tr>
-<tr align="center">
-<td class="headerblack">Price Per SCU</td> <!--- this where they enter the single SCU price --->
-<td class="headerblack"><input type="number" name="price" placeholder="this should be a value per scu" required></td>
 
+<tr align="center">
+<td class="headerblack">Local Affiliation</td>
+<td class="headerblack">
+<select name="aff" required>
+	<cfloop query="get_local">
+	<option value="#get_local.localaffUID#">#get_local.affname#</option>
+	</cfloop>
+	</select>
+	</td>
 </tr>
 
-<input type="hidden" name="noc" value="market"> <!--- this is a lock bit it's hidden from the browser so that people can't bypass this page on my testing site it can probably be removed --->
 <tr align="center">
-    <td colspan="4" align="center"><input type="submit" name="submit" value="Submit Report"></td> <!--- submit button --->
+ <td class="headerblack">Shop Name</td>
+ <td class="headerblack"><input name="locname" placeholder="Name of the shop IE dumpers depot, dude in an alley, ect" required></td>
+</tr>
+
+<tr align="center">
+    <td colspan="4" align="center"><input type="submit" name="submit" value="Submit Report"></td>
  </tr>
 
  </table></form>
 </div>
 
+<cfset locname = '#SafeEncode( '#locname#' )#'> <!--- place holder sanitization --->
+
 </cfoutput>
 
-<cfset price = '#SafeEncode( '#price#' )#'> <!--- place holder sanitization --->
+
 
     </section>
 
