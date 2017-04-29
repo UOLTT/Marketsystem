@@ -139,7 +139,7 @@
 
 </cfoutput>
 
-
+<cfset price = '#SafeEncode( '#price#' )#'> <!--- this is a place holder sanitization --->
 
     </section>
 
