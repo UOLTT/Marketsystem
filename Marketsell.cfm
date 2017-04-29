@@ -5,7 +5,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Market Sell Sheet</title>
+  <title>Market Sell Sheet</title> <!--- this page posts to the database table sellrep in the database --->
   <link rel="stylesheet" href="styles\stylesheet.css">
 
 </head>
@@ -53,7 +53,7 @@
 
       <div class="articleHeader">
 
-        <h2 class="articleTitle">Data on Item sold to the market</h2>
+        <h2 class="articleTitle">Reporting Item sold to the market</h2>
 
       </div>
     </section>
