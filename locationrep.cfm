@@ -34,7 +34,7 @@
         <a href="shoprep.cfm">Report a new Shop location</a>
       </li>
       <li class="menuButton">
-        <a href="updates.html">Game Updates</a>
+        <a href="commodityrep.cfm">Report a new commodity</a>
       </li>
       <li class="menuButton">
         <a href="faq.html">FAQ</a>
@@ -161,7 +161,7 @@
 
 <tr align="center">
  <td class="headerblack">Location Name</td>
- <td class="headerblack"><input type="number" name="locname" placeholder="Name of the location" required></td>
+ <td class="headerblack"><input name="locname" placeholder="Name of the location" required></td>
 </tr>
 
 <tr align="center">
